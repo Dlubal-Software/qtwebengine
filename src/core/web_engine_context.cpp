@@ -583,7 +583,7 @@ WebEngineContext::WebEngineContext()
     parsedCommandLine->AppendSwitchASCII(service_manager::switches::kApplicationName, QCoreApplication::applicationName().toUtf8().toPercentEncoding().toStdString());
 
     // Enable sandboxing on OS X and Linux (Desktop / Embedded) by default.
-    bool disable_sandbox = qEnvironmentVariableIsSet(kDisableSandboxEnv);
+    bool disable_sandbox = /*qEnvironmentVariableIsSet(kDisableSandboxEnv)*/true;
     if (!disable_sandbox) {
 #if defined(Q_OS_LINUX)
         parsedCommandLine->AppendSwitch(service_manager::switches::kDisableSetuidSandbox);
